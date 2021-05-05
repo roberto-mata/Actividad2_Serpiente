@@ -49,10 +49,12 @@ def move():
             y = colors [x]
         square(body.x, body.y, 9, y)
 
-    square(food.x, food.y, 9, 'green')
+    if z in colors:
+        w = colors [z]
+    square(food.x, food.y, 9, w)
     update()
     ontimer(move, 100)
-
+    
 setup(420, 420, 370, 0)
 hideturtle()
 tracer(False)
