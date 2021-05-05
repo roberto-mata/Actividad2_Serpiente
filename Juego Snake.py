@@ -6,6 +6,7 @@ from freegames import square, vector
 food = vector(0, 0)
 #define la posicion inicial de la serpiente
 snake = [vector(10, 0)]
+movimientos_food = [vector(-10,0), vector(10,0), vector (0,-10), vector (0,10)]
 aim = vector(0, -10)
 
 #Define colores, x=cuerpo z=comida
@@ -41,14 +42,16 @@ def move():
         food.y = randrange(-15, 15) * 10
     else:
         snake.pop(0)
-
+        food.move(movimientos_food[randrange(0,4)])
+        
+#Borra todo contenido de la ventana
     clear()
-
+#dibuja cuerpo de la serpiente
     for body in snake:
         if x in colors:
             y = colors [x]
         square(body.x, body.y, 9, y)
-
+#dibuja la comida
     if z in colors:
         w = colors [z]
     square(food.x, food.y, 9, w)
