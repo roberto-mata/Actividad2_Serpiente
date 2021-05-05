@@ -7,6 +7,12 @@ food = vector(0, 0)
 #define la posicion inicial de la serpiente
 snake = [vector(10, 0)]
 aim = vector(0, -10)
+
+#Define colores, x=cuerpo z=comida
+colors  = {1:'pink',2:'yellow',3:'blue',4:'orange',5:'purple'}
+x = randrange(1, 6)
+z = randrange(1, 6)
+
 #define un cambio en x,y
 def change(x, y):
     "Change snake direction."
@@ -38,9 +44,7 @@ def move():
 
     clear()
 
-    for body in snake:
-        colors  = {1:'pink',2:'green',3:'blue',4:'orange',5:'purple'}
-        x = randrange(1, 6)
+        for body in snake:
         if x in colors:
             y = colors [x]
         square(body.x, body.y, 9, y)
