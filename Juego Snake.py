@@ -44,7 +44,7 @@ def move():
 
     clear()
 
-        for body in snake:
+    for body in snake:
         if x in colors:
             y = colors [x]
         square(body.x, body.y, 9, y)
