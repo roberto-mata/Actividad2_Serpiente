@@ -39,7 +39,11 @@ def move():
     clear()
 
     for body in snake:
-        square(body.x, body.y, 9, 'purple' or 'black' or 'blue' or 'yellow') 
+        colors  = {1:'pink',2:'green',3:'blue',4:'orange',5:'purple'}
+        x = randrange(1, 6)
+        if x in colors:
+            y = colors [x]
+        square(body.x, body.y, 9, y)
 
     square(food.x, food.y, 9, 'green')
     update()
